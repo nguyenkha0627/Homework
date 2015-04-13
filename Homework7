@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class TTT {
-	public static int row, col;
-	public static Scanner scan = new Scanner(System.in);
-	public static char[][] board = new char [3][3];
-	public static char turn = 'O';
+	public static int row, col; //variables for row and columns
+	public static Scanner scan = new Scanner(System.in); //input
+	public static char[][] board = new char[3][3]; //this is the board double char board
+	public static char turn = 'X'; //starting the player turn
 	
 	public static void main(String[]args) {
 		for (int i = 0; i <3; i++){
@@ -40,16 +40,17 @@ public class TTT {
   
 	public static void PrintBoard() {
 		for (int i = 0; i <3; i++){
+			System.out.println();
 			for (int j = 0; j < 3; j++){
 				if (j == 0 )
-					System.out.print (" | ");
+					System.out.println (" | ");
 				System.out.print(board[i][j] + " | ");
 			}
 		}
 		System.out.println();
 	}
 	  
-	public static boolean GameOver (int rMove, int cMove){
+	public static boolean GameOver (int rMove, int cMove){ //row move and column move
 		 if (board[0][cMove] == board[1][cMove]
 				 && board[0][cMove] == board[2][cMove])
 			 return true;
